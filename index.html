@@ -29,7 +29,7 @@
     <div id="setup-phase" class="screen">
         <div class="card">
             <h1>实验设置</h1>
-            <p class="subtitle">变化定位任务 — 请输入被试基本信息</p>
+            <p class="subtitle">变化定位任务 — 请输入组别，系统将自动生成匿名被试编号</p>
             <!-- 版本标记：用于确认浏览器加载的是最新代码（被试看不到，仅设置页显示） -->
             <p class="build-tag" id="build-tag">build</p>
             <!-- 版本不一致告警：浏览器缓存了旧 clt.js 时显示 -->
@@ -39,46 +39,14 @@
 
             <form id="setup-form">
                 <div class="form-group">
-                    <label for="subName">姓名 (Name)</label>
-                    <input type="text" id="subName" required>
-                </div>
-                <div class="form-group">
-                    <label for="subGender">性别 (Gender)</label>
-                    <select id="subGender" required>
-                        <option value="">请选择</option>
-                        <option value="男">男</option>
-                        <option value="女">女</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="subAge">年龄 (Age)</label>
-                    <input type="number" id="subAge" required>
-                </div>
-                <div class="form-group">
-                    <label for="subIdCard">身份证号 (ID Card Number)</label>
-                    <input type="text" id="subIdCard" maxlength="18" required>
-                    <small class="form-hint">输入后中间部分将自动掩蔽，仅显示前4位和后6位</small>
-                </div>
-                <div class="form-group">
-                    <label for="subPhone">手机号 (Phone Number)</label>
-                    <input type="tel" id="subPhone" maxlength="11" required>
-                </div>
-                <div class="form-group">
                     <label for="subGroup">组别 (Group)</label>
-                    <input type="text" id="subGroup" inputmode="numeric" maxlength="1" pattern="[12]" required
-                           placeholder="1=先做FCDT后CLT；2=先做CLT后FCDT">
+                    <input type="text" id="subGroup" inputmode="numeric" maxlength="1"
+                           pattern="[012]" placeholder="0=调试；1=先做FCDT后CLT；2=先做CLT后FCDT" required>
                 </div>
                 <div class="form-group">
-                    <label for="subjectID">被试编号 (Subject ID — 自动生成)</label>
-                    <input type="text" id="subjectID" readonly placeholder="由身份证后6位 + 手机后4位自动生成">
+                    <label for="subjectID">匿名被试编号 (Subject ID)</label>
+                    <input type="text" id="subjectID" readonly placeholder="开始实验后自动生成">
                 </div>
-                <!-- 两个「选项」已彻底移除（不再只是隐藏），避免任何情况下再次出现在设置页：
-                     ①「保存数据到本地」—— clt.js 中恒为 p.saveLocal = true，
-                        网页端数据库与本地 Excel 同时保存，不提供开关、不由被试/主试选择；
-                     ②「调试模式」—— 通过姓名填写为「1」触发，
-                        不需要勾选框。
-                     注意：clt.js 不读取任何 id="saveLocal" / id="debugMode" 的元素，
-                     删除这两个复选框不影响任何逻辑。 -->
 
                 <button type="button" id="start-btn" class="btn primary">开始实验</button>
             </form>
