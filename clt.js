@@ -82,8 +82,8 @@ console.log('[CLT] build ' + CLT_BUILD + ' loaded');
 })();
 
 let supabaseClient = null;
-const SUPABASE_URL = "YOUR_SUPABASE_URL_HERE";
-const SUPABASE_KEY = "YOUR_SUPABASE_ANON_KEY_HERE";
+const SUPABASE_URL = "https://rnfwxphdzvonoiduidsg.supabase.co";
+const SUPABASE_KEY = "sb_publishable_kdXRnhVgTwsfgrrzO0ok8A_PZOKfHZK";
 const EXPERIMENT_VERSION = 'clt_traditional_123890';
 const SESSION_ID = (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function')
     ? globalThis.crypto.randomUUID()
