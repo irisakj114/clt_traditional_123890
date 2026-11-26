@@ -107,7 +107,7 @@ const prefs = {
     numBlocks: 4,
     numTrials: 20,
     nEachSS: 40,            // 每个 set size 40 trial
-    nPractice: 16,          // 练习 16 trial
+    nPractice: 8,           // 调试练习 8 trial，2 种 set size 各 4 trial
     ITI: 500,               // ms
     studyDuration: 250,     // ms（对应 MATLAB studyDuration）
     retentionInterval: 1000,// ms
